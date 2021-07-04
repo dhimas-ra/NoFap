@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B6D9F4"
+    tools:context=".SplashScreen.SplashScreen">
+
+    <TextView
+        android:id="@+id/cover"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginLeft="153dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginBottom="372dp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="NoFap"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/cover"
+        android:layout_marginTop="45dp"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cover"
+        android:layout_alignLeft="@+id/cover"
+        android:layout_alignEnd="@+id/cover"
+        android:layout_alignRight="@+id/cover"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-17dp"
+        android:layout_marginLeft="-17dp"
+        android:layout_marginEnd="-20dp"
+
+        android:layout_marginRight="-20dp"
+        android:layout_marginBottom="350dp"
+        android:gravity="center"
+        android:text="Stay Halal Brother" />
+</RelativeLayout>
