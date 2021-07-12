@@ -27,6 +27,7 @@ public class BacaMotivasi extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String judul = extras.getString("a");
 
+        //membuat fungsi untuk mengatur textview
         switch (judul){
             case "QS. Al-Baqarah Ayat 96":
                 tJudul.setText("...وَاللّٰهُ بَصِيْرٌۢ بِمَا يَعْمَلُوْن");

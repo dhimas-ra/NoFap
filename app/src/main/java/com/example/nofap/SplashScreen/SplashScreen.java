@@ -16,8 +16,10 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        //menjalankan splashscreen
         Thread splash = new Thread() {
             public void run() {
+                //menambahkan waktu splashscreen berjalan
                 try {
                     sleep(2000);
                 }
@@ -25,6 +27,7 @@ public class SplashScreen extends AppCompatActivity {
                 {
                     e.printStackTrace();
                 }
+                //memanggil class setelah splashscreen selesai
                 finally {
                     startActivity(new Intent(SplashScreen.this, LoginActivity.class));
                     finish();

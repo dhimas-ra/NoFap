@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     TextView timerTxt, timerTxt2, timerTxt3, timerTxt4;
     Button startBtn, stopBtn, btnPengingat;
     ImageButton menuBtn;
-    private ListView list;
-    private DataAdapter adapter;
     Bundle bundle = new Bundle();
     Intent intent;
 
@@ -54,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         timer = new Timer();
 
+        //Memanggil popUpMenu
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
 
 
-
+        //Memanggil class Home
         btnPengingat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +77,9 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         });
     }
 
+    //Reset waktu
     public void resetTapped(View v) {
+        //Memanggil pesan peringatan
         AlertDialog.Builder resetAlert = new AlertDialog.Builder(this);
         resetAlert.setTitle("Relapse");
         resetAlert.setMessage("Never Too Late!!! Coba Lagi!");
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
 
-
+    //Mulai Count Up
     public void startStopTapped(View v)
     {
         if (timeStarted == false)
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     private void starTimer() {
 
-
+        //Membuat aplikasi menjadi berjalan di latar belakang
         Runnable objRunnable = new Runnable() {
             @Override
             public void run() {
@@ -137,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Thread objBgThread = new Thread(objRunnable);
         objBgThread.start();
 
+        //membuat method untuk menampilkan angka
         timerTask = new TimerTask() {
             @Override
             public void run() {
@@ -157,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         timer.scheduleAtFixedRate(timerTask,0,1000);
     }
 
-
+    //membuat objek teks waktu
     private String getTimerText() {
         int rounded = (int) Math.round(time);
 
@@ -166,12 +168,16 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         return formatTime4(seconds);
     }
+
+    //membuat objek teks waktu
     private String getTimerText2() {
         int rounded = (int) Math.round(time);
 
         int minutes = ((rounded % 86400) % 3600) / 60;
         return formatTime3(minutes);
     }
+
+    //membuat objek teks waktu
     private String getTimerText3() {
         int rounded = (int) Math.round(time);
 
@@ -179,6 +185,8 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         return formatTime2(hours);
 
     }
+
+    //membuat objek teks waktu
     private String getTimerText4() {
         int rounded = (int) Math.round(time);
 
@@ -187,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         return formatTime1(days);
     }
 
+    //membuat format waktu
     private String formatTime1(int days) {
         return String.format("%02d",days);
 
@@ -205,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     @Override
+    //memanggil class dari popUp menu
     public boolean onMenuItemClick(MenuItem menuItem){
         switch (menuItem.getItemId()) {
             case R.id.mnabout:

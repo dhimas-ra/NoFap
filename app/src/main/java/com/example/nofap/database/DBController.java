@@ -20,15 +20,18 @@ public class DBController extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
 
+    //memanggil nama db dan db version
     public DBController(Context context) {
         super(context, database_name, null, 2);
         db = getWritableDatabase();
     }
 
     @Override
+    //Membuat tabel
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + table_name + "(" + row_id + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + row_username + " TEXT," + row_password + " TEXT)";
+        //Execute
         db.execSQL(query);
     }
 
@@ -43,6 +46,7 @@ public class DBController extends SQLiteOpenHelper {
     }
 
 
+    //Baca data agar bisa login
     public boolean checkUser(String username, String password){
         String[] columns = {row_id};
         SQLiteDatabase db = getReadableDatabase();

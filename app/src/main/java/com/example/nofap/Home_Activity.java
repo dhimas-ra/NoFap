@@ -20,17 +20,14 @@ import java.util.ArrayList;
 
 public class Home_Activity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    //deklarasi data dengan jenis data listview
     private ListView list;
+    //memanggil kelas listview
     DataAdapter adapter;
+    //deklarasi array
     String[] listMtv;
-    private FloatingActionButton fab;
-    Button b;
+    //deklarasi array untuk menyimpan data
     public static ArrayList<tobat> tobatArrayList;
-    Bundle bundle = new Bundle();
-    Intent intent;
-    public String judul, isi;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +35,13 @@ public class Home_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_);
 
+        //menyimpan data di arraylist
         listMtv = new String[]{"QS. Al-Baqarah Ayat 96", "An-Nisa` ayat 58",
                 "Mr.Doge", "REMEMBER THIS"};
 
         list = findViewById(R.id.listKontak);
 
+        //membuat objek dari class menjadi arraylist
         tobatArrayList = new ArrayList<>();
         for (int i = 0; i < listMtv.length; i++)
         {

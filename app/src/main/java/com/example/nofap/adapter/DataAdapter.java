@@ -32,34 +32,45 @@ public class DataAdapter extends BaseAdapter {
     LayoutInflater inflater;
     private ArrayList<tobat> listdata;
 
+    //Membuat konstruktor DataAdapter
     public DataAdapter(Context context) {
+        //Memberi nilai mCOntext pada context
         mContext = context;
+        //mengatur layoutinflater
         inflater = LayoutInflater.from(mContext);
+        //Memberikan nilai arraylist dari class tobat
         this.listdata = new ArrayList<tobat>();
+        //menambahkan semua elemen ke arraylist
         this.listdata.addAll(Home_Activity.tobatArrayList);
     }
 
+    //membuat class untuk mendeklarasikan tempat untuk mletakkan isi ke dalam listview
     public class ViewHolder {
+        //mendeklarasijan variabel dengan jenis text
         TextView judul;
     }
 
 
     @Override
+    //mengembalikan jumlah item
     public int getCount() {
         return Home_Activity.tobatArrayList.size();
     }
 
     @Override
+    //mengembalikan nilai berupa objek dari array
     public Object getItem(int i) {
         return Home_Activity.tobatArrayList.get(i);
     }
 
     @Override
+    //mengembalikan nilai dari posisi item ke adapter
     public long getItemId(int i) {
         return i;
     }
 
     @Override
+    //untuk menampilkan
     public View getView(int i, View view, ViewGroup viewGroup) {
         final ViewHolder holder;
 

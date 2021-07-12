@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         TxPassword = (EditText)findViewById(R.id.edPassword);
         BtnLogin = (Button)findViewById(R.id.btnLogin);
 
+        //Memanggil class MainActivity ketika login berhasil
         BtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,10 +41,13 @@ public class LoginActivity extends AppCompatActivity {
 
         dbHelper = new DBController(this);
 
+        //Membuat textView Daftar atau Register
         TextView tvCreateAccount = (TextView)findViewById(R.id.tvCreateAccount);
 
         tvCreateAccount.setText(fromHtml("I don't have account yet. " +
                 "</font><font color='#3b5998'>create one</font>"));
+
+        //Memanggil class SignUpActivity dengan menekan textView
         tvCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,13 +55,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Mengaktifkan fungsi button
         BtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = TxUsername.getText().toString().trim();
                 String password = TxPassword.getText().toString().trim();
 
+                //Panggil DB
                 Boolean res = dbHelper.checkUser(username,password);
+
                 if(res == true){
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));

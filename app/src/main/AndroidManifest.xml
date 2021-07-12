@@ -15,7 +15,6 @@
         <activity android:name=".LoginActivity"  />
 
         <activity android:name=".BacaMotivasi" />
-        <activity android:name=".EditData" />
         <activity android:name=".about.TentangKami" />
         <activity
             android:name=".Home_Activity"
